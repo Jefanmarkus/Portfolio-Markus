@@ -85,7 +85,7 @@ section {
   display: flex;
   align-items: center;
   padding: 0 9%;
-  background: url("/img/Homes3.png") no-repeat;
+  background: url("/img/homes.png") no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -501,6 +501,12 @@ span {
   transform: translateX(-50%);
 }
 
+.skills .skills-row .title {
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .skills .skills-row {
   display: flex;
   flex-wrap: wrap;
@@ -591,7 +597,8 @@ span {
   width: 70%;
 }
 
-.project {
+.project .heading,
+.project .project1 {
   position: relative;
   display: inline-block;
   min-height: auto;
@@ -600,16 +607,12 @@ span {
 
 .project h2 {
   position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.project1 img {
-  height: auto;
-  width: 100%;
-  box-shadow: black;
-}
 .footer {
   display: flex;
   justify-content: space-between;
@@ -669,7 +672,7 @@ span {
   position: absolute;
   top: 0;
   right: 0;
-  width: 110%;
+  width: 100%;
   height: 100%;
   background: var(--bg-color);
   z-index: 99;
@@ -705,11 +708,16 @@ section:nth-child(odd) .animate-scroll,
   width: 105%;
 }
 
+.project .project1 .animate-scroll {
+  width: 105%;
+}
+
 .about.show-animate .animate.scroll,
 .education.show-animate .animate.scroll,
 .education.show-animate .education-box .animate.scroll,
 .skills.show-animate .animate.scroll,
 .project.show-animate .animate.scroll,
+.project1.img.show-animate .animate.scroll,
 .footer.show-animate .animate.scroll {
   transition-delay: calc(0.3s * var(--i));
   width: 0;
@@ -804,6 +812,8 @@ section:nth-child(odd) .animate-scroll,
     font-size: 2rem;
     margin: 3rem 0;
     transform: translateX(-20rem);
+    transition: 0.25s ease;
+    transition-delay: 0s;
   }
 
   .navbar.active a {
@@ -813,8 +823,12 @@ section:nth-child(odd) .animate-scroll,
 
   .home-imgHover {
     pointer-events: none;
-    background: var(--bg-color);
+    background: var(--bg-black);
     opacity: 0.6;
+  }
+  .project1 img {
+    width: 100%;
+    height: 100%;
   }
 }
 
